@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+// #define USING_COCOS2D
+
 typedef enum tagFigureRendererType
 {
-    ,FigureRendererTypeNextButton
+    FigureRendererTypeNextButton
     ,FigureRendererTypeNextButtonSelected
 }FigureRendererType;
 
@@ -21,9 +23,11 @@ typedef enum tagFigureRendererType
 
 + (void) renderWithFigureType:(FigureRendererType)figureRendererType;
 + (CGSize) sizeForFigureType:(FigureRendererType)figureRendererType;
-+ (CCSprite*) createSpriteWithFigureType:(FigureRendererType)figureRendererType;
 + (NSString*) keyNameWithFigureType:(FigureRendererType)figureRendererType;
+#ifdef USING_COCOS2D
++ (CCSprite*) createSpriteWithFigureType:(FigureRendererType)figureRendererType;
 + (CCSpriteBatchNode*) createBatchNodeWithFigureType:(FigureRendererType)figureRendererType;
+#endif
 + (UIImage*) createImageWithFigureType:(FigureRendererType)figureRendererType;
 
 @end
